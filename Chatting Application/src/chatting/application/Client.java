@@ -12,6 +12,7 @@ import java.io.*;
 public class Client extends JFrame implements ActionListener {
     JTextField text;
     static JPanel a1;
+    static JScrollPane scrollPane;
     static Box vertical = Box.createVerticalBox();
     static JFrame f = new JFrame();
     static DataOutputStream dout; 
@@ -66,7 +67,7 @@ public class Client extends JFrame implements ActionListener {
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
         
-        JLabel name = new JLabel("Bunty");
+        JLabel name = new JLabel("client");
         name.setBounds(110, 15, 100, 18);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
@@ -95,6 +96,12 @@ public class Client extends JFrame implements ActionListener {
         send.addActionListener(this);
         send.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
         f.add(send);
+        
+        JScrollPane scrollPane = new JScrollPane(a1);
+        scrollPane.setBounds(5, 75, 400 , 570);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(440, 570));
+        f.add(scrollPane);
         
         f.setSize(450, 700);
         f.setLocation(800, 0);
